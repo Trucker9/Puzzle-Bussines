@@ -1,0 +1,177 @@
+/* ##################################### Initials*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "iranSans", Arial, sans-serif;
+  font-weight: normal;
+  line-height: 1.4;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  margin: 0.75rem 0;
+}
+@font-face {
+  font-family: iranSans;
+  font-style: normal;
+  font-weight: normal;
+  src: url("fonts/eot/IRANSansWeb.eot");
+  src: url("fonts/eot/IRANSansWeb.eot?iefix") format("embedded-opentype"),
+    url("fonts/woff2/IRANSansWeb.woff2") format("woff2"),
+    url("fonts/woff/IRANSansWe.woff") format("woff"),
+    url("fonts/ttf/IRANSansWeb.ttf") format("truetype");
+}
+@font-face {
+  font-family: iranSans;
+  font-style: normal;
+  font-weight: bold;
+  src: url("fonts/eot/IRANSansWeb_Bold.eot");
+  src: url("fonts/Vazir-Bold.eot?#iefix") format("embedded-opentype"),
+    url("fonts/woff2/IRANSansWeb_Bold.woff2") format("woff2"),
+    url("fonts/woff/IRANSansWeb_Bold.woff") format("woff"),
+    url("fonts/IRANSansWeb_Bold.ttf") format("truetype");
+}
+/* ##################################### Utility */
+
+:root {
+  --puzzle-primary: rgb(51, 153, 204);
+  --programming-primary: rgb(0, 153, 102);
+  --studio-primary: rgb(255, 51, 102);
+  --adds-primary: rgb(255, 153, 51);
+  --puzzle-primary-op25: rgb(51, 153, 204, 0.25);
+  --programming-primary-op25: rgb(0, 153, 102, 0.25);
+  --studio-primary-op25: rgb(255, 51, 102, 0.25);
+  --adds-primary-op25: rgb(255, 153, 51,0.25);
+}
+.btn {
+  display: inline-block;
+  border: none;
+  color: #fff;
+  background: #52a9cb;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+.btn:hover {
+  background: #233585;
+}
+.text-box {
+  max-width: 300px;
+  text-align: end;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+}
+
+.container {
+  max-width: 1100px;
+  min-width: 1100px;
+  margin: auto;
+  padding: 0 2rem;
+  overflow: hidden;
+}
+
+/* ##################################### Showcase */
+#navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+
+  display: flex; /* all of the children of the navbar are now flex items*/
+  justify-content: space-between; /* logo goes left, list goes right*/
+
+  background: rgb(37, 48, 70);
+  color: #fff; /*links wont affect*/
+}
+#navbar img {
+  height: 3rem;
+  margin: 0.5rem;
+}
+#navbar a {
+  margin: 1rem;
+}
+/* #navbar h3{
+  display: none;
+} */
+/* ##################################### Showcase */
+
+#showcase {
+  height: 100vh;
+  background: url(../img/showcase-background.jpg) no-repeat center center/cover;
+}
+#showcase a img {
+  width: 16vw;
+  position: absolute;
+  transition: ease-in-out 0.3s;
+}
+#showcase .text-box{
+  opacity: 0;
+  transition: 0.5s ease-in-out;
+}
+
+#showcase #puzzle img {
+  top: 20vh;
+  right: 40vw;
+}
+#showcase #puzzle .text-box {
+  background-color: var(--puzzle-primary-op25);
+  left: 46vw;
+}
+
+#showcase #programming img {
+  top: 37vh;
+  right: 32vw;
+}
+#showcase #programming .text-box {
+  background-color: var(--programming-primary-op25);
+  left: 47.5vw;
+}
+#showcase #studio img {
+  top: 54vh;
+  right: 40vw;
+}
+#showcase #studio .text-box {
+  background-color: var(--studio-primary-op25);
+  left: 45.5vw;
+}
+#showcase #adds img {
+  width: 16.3vw;
+  top: 36.8vh;
+  right: 47.8vw;
+}
+#showcase #adds .text-box {
+  background-color: var(--adds-primary-op25);
+   
+  left: 48vw;
+}
+#showcase #puzzle img:hover {
+  transform: translate(0px, -30px) scale(1.1);
+}
+#showcase #programming img:hover {
+  transform: translate(+30px, 0px) scale(1.1);
+}
+#showcase #studio img:hover {
+  transform: translate(0px, +30px) scale(1.1);
+}
+#showcase #adds img:hover {
+  transform: translate(-30px, 0px) scale(1.1);
+}
+#showcase #puzzle img:hover + .text-box {
+  opacity: 100%;
+}
+#showcase #programming img:hover + .text-box {
+  opacity: 100%;
+}
+#showcase #studio img:hover + .text-box {
+  opacity: 100%;
+}
+#showcase #adds img:hover  ~ .text-box {
+  opacity: 100%;
+}
