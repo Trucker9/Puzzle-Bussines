@@ -48,7 +48,7 @@ p {
   --puzzle-primary-op25: rgb(51, 153, 204, 0.25);
   --programming-primary-op25: rgb(0, 153, 102, 0.25);
   --studio-primary-op25: rgb(255, 51, 102, 0.25);
-  --adds-primary-op25: rgb(255, 153, 51,0.25);
+  --adds-primary-op25: rgb(255, 153, 51, 0.25);
 }
 .btn {
   display: inline-block;
@@ -111,45 +111,92 @@ p {
   position: absolute;
   transition: ease-in-out 0.3s;
 }
-#showcase .text-box{
+#showcase .text-box {
   opacity: 0;
   transition: 0.5s ease-in-out;
 }
 
-#showcase #puzzle img {
-  top: 20vh;
-  right: 40vw;
-}
 #showcase #puzzle .text-box {
   background-color: var(--puzzle-primary-op25);
-  left: 46vw;
 }
 
-#showcase #programming img {
-  top: 37vh;
-  right: 32vw;
-}
 #showcase #programming .text-box {
   background-color: var(--programming-primary-op25);
-  left: 47.5vw;
 }
-#showcase #studio img {
-  top: 54vh;
-  right: 40vw;
-}
+
 #showcase #studio .text-box {
   background-color: var(--studio-primary-op25);
-  left: 45.5vw;
 }
-#showcase #adds img {
-  width: 16.3vw;
-  top: 36.8vh;
-  right: 47.8vw;
-}
+
 #showcase #adds .text-box {
   background-color: var(--adds-primary-op25);
-   
-  left: 48vw;
+}
+
+#showcase #puzzle img {
+  animation: puzzle-piece 0.8s forwards ease-in;
+}
+#showcase #programming img {
+  animation: programming-piece 0.8s forwards ease-in;
+}
+#showcase #studio img {
+  animation: studio-piece 0.8s forwards ease-in;
+}
+#showcase #adds img {
+  animation: adds-piece 0.8s forwards ease-in;
+}
+@keyframes puzzle-piece {
+  from {
+    opacity: 0;
+    top: 10vh;
+    right: 40vw;
+  }
+
+  to {
+    opacity: 100%;
+    top: 20vh;
+    right: 40vw;
+  }
+}
+@keyframes programming-piece {
+  from {
+    opacity: 0;
+    top: 37vh;
+    right: 22vw;
+  }
+
+  to {
+    opacity: 100%;
+    top: 37vh;
+    right: 32vw;
+  }
+}
+@keyframes studio-piece {
+  from {
+    opacity: 0;
+    top: 64vh;
+    right: 40vw;
+  }
+
+  to {
+    opacity: 100%;
+    top: 54vh;
+    right: 40vw;
+  }
+}
+@keyframes adds-piece {
+  from {
+    opacity: 0;
+    width: 16.3vw;
+    top: 36.8vh;
+    right: 57.8vw;
+  }
+
+  to {
+    opacity: 100%;
+    width: 16.3vw;
+    top: 36.8vh;
+    right: 47.8vw;
+  }
 }
 #showcase #puzzle img:hover {
   transform: translate(0px, -30px) scale(1.1);
@@ -172,6 +219,6 @@ p {
 #showcase #studio img:hover + .text-box {
   opacity: 100%;
 }
-#showcase #adds img:hover  ~ .text-box {
+#showcase #adds img:hover ~ .text-box {
   opacity: 100%;
 }
